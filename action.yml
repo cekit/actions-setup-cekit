@@ -2,11 +2,12 @@ name: 'Setup CEKit (Container Evolution Kit)'
 description: 'This action setups your GitHub Actions workflow with Container Evolution Kit (CEKit)'
 author: 'Marc Nuri'
 branding:
-  icon: circle
+  icon: layers
   color: red
 inputs:
   version:
     description: 'Version of CEKit to install'
+    required: false
 runs:
   using: 'node12'
   main: 'src/index.js'
