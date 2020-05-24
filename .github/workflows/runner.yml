@@ -1,0 +1,34 @@
+name: Tests
+
+on:
+  push:
+  schedule:
+    - cron: '0 3 * * *' # Everyday at 3
+
+jobs:
+  defaults:
+    name: Test Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@master
+      - name: Test Action
+        uses: ./
+      - name: Run CEKit
+        run: cekit --version
+  with-version:
+    name: Test Action (with version)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@master
+      - name: Test Action
+        uses: ./
+        with:
+          version: 3.5.0
+      - name: Run CEKit
+        run: cekit --version | grep 3.5.0
