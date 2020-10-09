@@ -16,7 +16,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v1
   - name: Install CEKit
-    uses: manusa/actions-setup-cekit@v1.0.0
+    uses: manusa/actions-setup-cekit@v1.0.1
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
 ```
@@ -34,7 +34,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v1
   - name: Install CEKit
-    uses: manusa/actions-setup-cekit@v1.0.0
+    uses: manusa/actions-setup-cekit@v1.0.1
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
     with:
