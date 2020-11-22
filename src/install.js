@@ -6,7 +6,7 @@ const child_process = require('child_process');
 const installPythonDependencies = () => {
   core.info('Installing Python dependencies...');
   child_process.execSync(
-    'sudo apt-get install -y python3.7 python3-pip gcc build-essential libkrb5-dev python3-setuptools'
+    'sudo apt-get update && sudo apt-get install -y python3.9 python3-pip gcc build-essential libkrb5-dev python3-setuptools'
   );
 };
 
