@@ -1,6 +1,6 @@
 {
   "name": "github-actions-setup-cekit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Setup your GitHub Actions workflow with Container Evolution Kit (CEKit)",
   "main": "src/index.js",
   "scripts": {
