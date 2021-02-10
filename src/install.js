@@ -16,6 +16,7 @@ const installPythonDependencies = () => {
 
 const installRequiredPipPackages = () => {
   core.info("Installing required PiP modules...");
+  child_process.execSync('pip3 install -U pip', {stdio: 'inherit'});
   child_process.execSync('pip3 install wheel', {stdio: 'inherit'});
   child_process.execSync('pip3 install odcs', {stdio: 'inherit'});
   child_process.execSync('pip3 install docker', {stdio: 'inherit'});
