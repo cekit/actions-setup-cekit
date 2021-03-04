@@ -1,6 +1,6 @@
 Setup CEKit (Container Evolution Kit) GitHub Action
 ===============================
-[<img src="https://github.com/manusa/actions-setup-cekit/workflows/Run%20action%20and%20validate%20environment/badge.svg" />](https://github.com/manusa/actions-setup-cekit/actions)
+[<img src="https://github.com/cekit/actions-setup-cekit/workflows/Run%20action%20and%20validate%20environment/badge.svg" />](https://github.com/cekit/actions-setup-cekit/actions)
 
 Setup your GitHub Actions workflow with [Container Evolution Kit](https://github.com/cekit/cekit/)
 (CEKit).
@@ -16,7 +16,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v1
   - name: Install CEKit
-    uses: manusa/actions-setup-cekit@v1.1.1
+    uses: cekit/actions-setup-cekit@v1.1.1
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
 ```
@@ -34,7 +34,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v1
   - name: Install CEKit
-    uses: manusa/actions-setup-cekit@v1.1.1
+    uses: cekit/actions-setup-cekit@v1.1.1
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
     with:
