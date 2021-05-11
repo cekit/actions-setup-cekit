@@ -44,3 +44,12 @@ steps:
 ## License
 
 The scripts and documentation in this project are released under the [Apache 2.0](./LICENSE) License.
+
+## Release process
+
+- Set new version in `pacakge.json`
+- Run: `npm install --only=prod`
+- Update `README.md` with new version
+- Commit `[RELEASE] Release vX.Y.Z`
+- Tag+push `vX.Y.Z`
+- Create GitHub release for tag
