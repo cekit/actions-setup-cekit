@@ -29,6 +29,6 @@ jobs:
       - name: Test Action
         uses: ./
         with:
-          version: 3.5.0
+          version: 3.12.0
       - name: Run CEKit
-        run: cekit --version | grep 3.5.0
+        run: cekit --version | grep 3.12.0
