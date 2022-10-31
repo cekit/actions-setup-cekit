@@ -14,7 +14,7 @@ is supported._
 ```yaml
 steps:
   - name: Checkout
-    uses: actions/checkout@v1
+    uses: actions/checkout@v3
   - name: Install CEKit
     uses: cekit/actions-setup-cekit@v1.1.4
   - name: Build CEKit image
@@ -32,7 +32,7 @@ steps:
 ```yaml
 steps:
   - name: Checkout
-    uses: actions/checkout@v1
+    uses: actions/checkout@v3
   - name: Install CEKit
     uses: cekit/actions-setup-cekit@v1.1.4
   - name: Build CEKit image

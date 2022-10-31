@@ -3,7 +3,7 @@ name: Runner - E2E Tests
 on:
   push:
   schedule:
-    - cron: '0 3 * * *' # Everyday at 3
+    - cron: '0 3 * * *' # Every day at 3
 
 jobs:
   defaults:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@master
       - name: Test Action
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@master
       - name: Test Action
