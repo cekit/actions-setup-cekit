@@ -1,6 +1,7 @@
 Setup CEKit (Container Evolution Kit) GitHub Action
 ===============================
-[<img src="https://github.com/cekit/actions-setup-cekit/workflows/Run%20action%20and%20validate%20environment/badge.svg" />](https://github.com/cekit/actions-setup-cekit/actions)
+
+[![Runner - E2E Tests](https://github.com/cekit/actions-setup-cekit/actions/workflows/runner.yml/badge.svg)](https://github.com/cekit/actions-setup-cekit/actions/workflows/runner.yml)
 
 Setup your GitHub Actions workflow with [Container Evolution Kit](https://github.com/cekit/cekit/)
 (CEKit).
