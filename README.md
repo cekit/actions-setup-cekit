@@ -48,7 +48,7 @@ The scripts and documentation in this project are released under the [Apache 2.0
 
 ## Release process
 
-- Set new version in `pacakge.json`
+- Set new version in `package.json`
 - Run: `npm install --only=prod`
 - Update `README.md` with new version
 - Commit `[RELEASE] Release vX.Y.Z`
