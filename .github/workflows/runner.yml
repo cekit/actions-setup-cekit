@@ -2,6 +2,9 @@ name: Runner - E2E Tests
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
   schedule:
     - cron: '0 3 * * *' # Every day at 3
 
@@ -11,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@master
       - name: Test Action
@@ -23,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@master
       - name: Test Action
