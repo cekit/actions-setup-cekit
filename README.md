@@ -17,25 +17,25 @@ steps:
   - name: Checkout
     uses: actions/checkout@v3
   - name: Install CEKit
-    uses: cekit/actions-setup-cekit@v1.1.5
+    uses: cekit/actions-setup-cekit@v1.1.6
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
 ```
 
 ### Optional input parameters
 
-| Parameter     | Description                                                                    |
-| ------------- | ------------------------------------------------------------------------------ |
-| `version`     | CEKit [version](https://pypi.org/project/cekit/#history) to install            |
+| Parameter | Description                                                         |
+|-----------|---------------------------------------------------------------------|
+| `version` | CEKit [version](https://pypi.org/project/cekit/#history) to install |
 
 ### Advanced
 
 ```yaml
 steps:
   - name: Checkout
-    uses: actions/checkout@v3
+    uses: actions/checkout@v4
   - name: Install CEKit
-    uses: cekit/actions-setup-cekit@v1.1.5
+    uses: cekit/actions-setup-cekit@v1.1.6
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
     with:
