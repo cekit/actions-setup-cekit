@@ -14,25 +14,20 @@ const installPythonDependencies = () => {
   );
 };
 
-const installRequiredPipPackages = () => {
-  core.info("Installing required PiP modules...");
-  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx install pip', {stdio: 'inherit'});
-  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx install wheel', {stdio: 'inherit'});
-  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx install odcs', {stdio: 'inherit'});
-  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx install --include-deps docker', {stdio: 'inherit'});
-  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx install docker_squash', {stdio: 'inherit'});
-  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx install behave', {stdio: 'inherit'});
+const injectingRequiredPipPackages = () => {
+  core.info("Injecting required PiP modules...");
+  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx inject cekit pip wheel odcs docker docker_squash behave lxml', {stdio: 'inherit'});
 };
 
 const install = inputs => {
   installPythonDependencies();
-  installRequiredPipPackages();
   core.info('Installing CEKit...');
   let cekitInstallCommand = 'PIPX_BIN_DIR=/usr/local/bin pipx install cekit';
   if (inputs.version) {
     cekitInstallCommand = `PIPX_BIN_DIR=/usr/local/bin pipx install cekit==${inputs.version}`;
   }
   child_process.execSync(cekitInstallCommand, {stdio: 'inherit'});
+  injectingRequiredPipPackages();
   core.addPath('/home/runner/.local/bin');
   const pythonVersion = child_process
     .execSync(`python --version`)
