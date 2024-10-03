@@ -17,7 +17,7 @@ steps:
   - name: Checkout
     uses: actions/checkout@v3
   - name: Install CEKit
-    uses: cekit/actions-setup-cekit@v1.1.6
+    uses: cekit/actions-setup-cekit@v1.1.7
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
 ```
@@ -35,11 +35,11 @@ steps:
   - name: Checkout
     uses: actions/checkout@v4
   - name: Install CEKit
-    uses: cekit/actions-setup-cekit@v1.1.6
+    uses: cekit/actions-setup-cekit@v1.1.7
   - name: Build CEKit image
     run: cekit --descriptor path-to-descriptior.yaml build
     with:
-      version: 3.5.0
+      version: 4.13.0
 ```
 
 ## License
