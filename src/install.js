@@ -14,9 +14,17 @@ const installPythonDependencies = () => {
   );
 };
 
-const injectingRequiredPipPackages = () => {
+const injectRequiredPipPackages = () => {
   core.info("Injecting required PiP modules...");
-  child_process.execSync('PIPX_BIN_DIR=/usr/local/bin pipx inject cekit pip wheel odcs docker docker_squash behave lxml', {stdio: 'inherit'});
+  child_process.execSync(`PIPX_BIN_DIR=/usr/local/bin pipx inject cekit  \\
+    pip                                                                           \\
+    wheel                                                                         \\
+    odcs                                                                          \\
+    docker                                                                        \\
+    docker_squash                                                                 \\
+    behave                                                                        \\
+    lxml                                                                          \\
+    `, {stdio: 'inherit'});
 };
 
 const install = inputs => {
@@ -27,7 +35,7 @@ const install = inputs => {
     cekitInstallCommand = `PIPX_BIN_DIR=/usr/local/bin pipx install cekit==${inputs.version}`;
   }
   child_process.execSync(cekitInstallCommand, {stdio: 'inherit'});
-  injectingRequiredPipPackages();
+  injectRequiredPipPackages();
   core.addPath('/home/runner/.local/bin');
   const pythonVersion = child_process
     .execSync(`python --version`)
